@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Viral TikTok Gadget</title>
+<title>Viral TikTok Gadgets</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -12,24 +13,9 @@
 !function (w, d, t) {
   w.TiktokAnalyticsObject=t;
   var ttq=w[t]=w[t]||[];
-  ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
-  ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+  ttq.methods=["page","track"];
+  ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments)))}};
   for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
-  ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};
-  ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";
-  ttq._i=ttq._i||{};
-  ttq._i[e]=[];
-  ttq._i[e]._u=i;
-  ttq._t=ttq._t||{};
-  ttq._t[e]=+new Date;
-  ttq._o=ttq._o||{};
-  ttq._o[e]=n||{};
-  var o=d.createElement("script");
-  o.type="text/javascript";
-  o.async=!0;
-  o.src=i+"?sdkid="+e+"&lib="+t;
-  var a=d.getElementsByTagName("script")[0];
-  a.parentNode.insertBefore(o,a)};
   ttq.load('TIKTOK_PIXEL_ID');
   ttq.page();
 }(window, document, 'ttq');
@@ -40,7 +26,6 @@
   --primary:#00ffcc;
   --accent:#ff0055;
 }
-
 body{
   font-family:Poppins,sans-serif;
   background:linear-gradient(135deg,#000428,#004e92);
@@ -49,10 +34,12 @@ body{
   padding:16px 16px 90px;
 }
 .container{
-  max-width:420px;
+  max-width:480px;
   margin:auto;
+}
+.header{
   text-align:center;
-  animation:fadeIn 1s ease;
+  margin-bottom:20px;
 }
 .badge{
   background:var(--accent);
@@ -60,60 +47,51 @@ body{
   border-radius:20px;
   font-size:12px;
   font-weight:600;
+  display:inline-block;
   animation:float 2.5s infinite;
 }
-h1{
-  font-size:22px;
-  margin:12px 0;
-}
-.product-img{
-  width:100%;
-  border-radius:18px;
-  margin:18px 0;
-  box-shadow:0 15px 35px rgba(0,0,0,.5);
-}
-.features{
+.product{
   background:#fff;
   color:#000;
-  padding:16px;
   border-radius:18px;
-  text-align:left;
+  padding:16px;
+  margin-bottom:18px;
+  animation:fadeUp .8s ease;
 }
-.features li{
-  margin-bottom:10px;
+.product img{
+  width:100%;
+  border-radius:14px;
+  margin-bottom:12px;
 }
-.cta{
+.product h3{
+  margin:6px 0;
+}
+.product ul{
+  padding-left:18px;
+  font-size:14px;
+}
+.buy{
   background:var(--primary);
   color:#000;
-  padding:16px;
-  border-radius:16px;
-  font-size:18px;
-  font-weight:600;
+  padding:14px;
+  border-radius:14px;
+  text-align:center;
+  font-weight:700;
   text-decoration:none;
   display:block;
-  margin-top:18px;
+  margin-top:12px;
   animation:pulse 1.5s infinite;
 }
-.sticky{
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  background:#00ffcc;
-  padding:14px;
-  font-weight:700;
+.footer{
   text-align:center;
-  color:#000;
-  text-decoration:none;
+  font-size:12px;
+  opacity:.6;
+  margin-top:10px;
 }
-@keyframes pulse{
-  50%{transform:scale(1.05)}
-}
-@keyframes float{
-  50%{transform:translateY(-4px)}
-}
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(15px)}
+@keyframes pulse{50%{transform:scale(1.05)}}
+@keyframes float{50%{transform:translateY(-4px)}}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
   to{opacity:1;transform:translateY(0)}
 }
 </style>
@@ -122,65 +100,72 @@ h1{
 <body>
 
 <div class="container">
-  <div class="badge">🔥 VIRAL TIKTOK GADGET</div>
-  <h1>Mini Electric Air Duster</h1>
 
-  <img src="PRODUCT IMAGE" class="product-img" alt="Gadget">
-
-  <div class="features">
-    <ul>
-      <li>✅ Cleans keyboard, fan & car AC</li>
-      <li>⚡ Rechargeable & powerful</li>
-      <li>💸 Cheaper than air spray cans</li>
-      <li>🔥 TikTok trending gadget</li>
-    </ul>
+  <div class="header">
+    <div class="badge">🔥 VIRAL TIKTOK GADGETS</div>
+    <h2>Best-Selling Shopee Finds</h2>
   </div>
 
-  <a href="#" id="buyBtn" class="cta">👉 BUY NOW ON SHOPEE</a>
-</div>
+  <!-- PRODUCT 1 -->
+  <div class="product">
+    <img src="IMAGE_1">
+    <h3>Mini Electric Air Duster</h3>
+    <ul>
+      <li>✅ Cleans keyboard & fan</li>
+      <li>⚡ Rechargeable</li>
+      <li>🔥 TikTok trending</li>
+    </ul>
+    <a href="#" class="buy" data-product="p1">BUY ON SHOPEE</a>
+  </div>
 
-<a href="#" id="stickyBtn" class="sticky">🛒 Buy Now – Best Price</a>
+  <!-- PRODUCT 2 -->
+  <div class="product">
+    <img src="IMAGE_2">
+    <h3>Magnetic Phone Holder</h3>
+    <ul>
+      <li>🚗 Perfect for car use</li>
+      <li>🧲 Strong magnet</li>
+      <li>💥 Budget gadget</li>
+    </ul>
+    <a href="#" class="buy" data-product="p2">BUY ON SHOPEE</a>
+  </div>
+
+  <!-- PRODUCT 3 -->
+  <div class="product">
+    <img src="IMAGE_3">
+    <h3>USB LED Monitor Light</h3>
+    <ul>
+      <li>💡 Eye protection</li>
+      <li>🖥️ Clean desk setup</li>
+      <li>🔥 DeskTok trend</li>
+    </ul>
+    <a href="#" class="buy" data-product="p3">BUY ON SHOPEE</a>
+  </div>
+
+  <div class="footer">
+    @YOURTIKTOK • Affiliate Disclosure
+  </div>
+
+</div>
 
 <script>
 // ===============================
-// SMART SELLER ROTATION
+// SELLER ROTATION PER PRODUCT
 // ===============================
-const sellers = [
-  "SHOPEE_LINK_1",
-  "SHOPEE_LINK_2",
-  "SHOPEE_LINK_3"
-];
+const products = {
+  p1: ["SHOPEE_LINK_1A","SHOPEE_LINK_1B"],
+  p2: ["SHOPEE_LINK_2A","SHOPEE_LINK_2B"],
+  p3: ["SHOPEE_LINK_3A","SHOPEE_LINK_3B"]
+};
 
-const chosenLink = sellers[Math.floor(Math.random() * sellers.length)];
+document.querySelectorAll(".buy").forEach(btn=>{
+  const links = products[btn.dataset.product];
+  const chosen = links[Math.floor(Math.random()*links.length)];
+  btn.href = chosen;
 
-document.getElementById("buyBtn").href = chosenLink;
-document.getElementById("stickyBtn").href = chosenLink;
-
-// ===============================
-// AUTO A/B REDIRECT (optional)
-// ===============================
-const abPages = [
-  "pageA.html",
-  "pageB.html"
-];
-
-if(!sessionStorage.getItem("abTest")){
-  const pick = abPages[Math.floor(Math.random() * abPages.length)];
-  sessionStorage.setItem("abTest", pick);
-  if(pick !== window.location.pathname.split("/").pop()){
-    window.location.replace(pick);
-  }
-}
-
-// ===============================
-// TIKTOK TRACKING EVENTS
-// ===============================
-document.getElementById("buyBtn").addEventListener("click",()=>{
-  ttq.track('ViewContent');
-});
-
-document.getElementById("stickyBtn").addEventListener("click",()=>{
-  ttq.track('ClickButton');
+  btn.addEventListener("click",()=>{
+    ttq.track('ViewContent',{product:btn.dataset.product});
+  });
 });
 </script>
 
